@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Plant } from '../shared/plant';
+import { alphabetize } from '../shared/utils'
 
 @Component({
   selector: 'app-main',
@@ -32,6 +33,7 @@ export class MainComponent implements OnInit {
       )
     }
     // console.log(this.plants);
+    alphabetize(this.plants, 'name');
   }
 
 }
