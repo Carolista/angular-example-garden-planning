@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Plant } from '../shared/plant';
+import Plant from '../shared/plant';
 import { alphabetize } from '../shared/utils'
 // TODO #3: add capitalize to utils and include with imports above
 
