@@ -1,8 +1,16 @@
+<!-- TODO #1: Make the entire component content display only when loaded has been set to true -->
 <div id="main-content">
   <div id="left-column">
     <h3>Available Plants</h3>
+    <!-- TODO #2: Use a structural directive to loop over the plants array here instead -->
+    <!-- TODO #3: Add card with image, chevron icons, etc. and add event handlers to icons -->
     <li>{{ plants[0].name }} - {{ plants[0].color }} - {{ plants[0].numAvailable }} available</li>
     <li>{{ plants[1].name }} - {{ plants[1].color }} - {{ plants[1].numAvailable }} available</li>
     <li>{{ plants[2].name }} - {{ plants[2].color }} - {{ plants[2].numAvailable }} available</li>
   </div>
+  <!-- TODO #4: Add right column with flowerbed area -->
+  <!-- TODO #5: Make title clickable and editable -->
+  <!-- TODO #6: Loop over selectedPlants to add cards with counts of plant.numAllocated -->
 </div>
+
+<!-- TODO #1: Use the ng-template tag with a template reference variable to set alternate text to display if loaded is still false -->

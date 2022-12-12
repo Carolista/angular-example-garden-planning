@@ -15,4 +15,10 @@ export class Plant {
     this.numAllocated = 0;
     this.image = image;
   }
+
+  // TODO #3: add returnOne() method to shift numbers
+
+  
+  // TODO #3: add allocateOne() method to shift numbers
+  
 }
