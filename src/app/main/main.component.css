@@ -1,0 +1,80 @@
+.available-plant {
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 6px;
+  max-height: 62px;
+}
+
+.image-and-text {
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.plant-name {
+  font-weight: bold;
+}
+
+.amount-text {
+  color: #508015;
+  text-transform: uppercase;
+}
+
+.unavailable {
+  color: #cdcdcd;
+}
+
+.arrows {
+  align-items: center;
+  font-size: 1.4rem;
+  gap: 6px;
+  margin-right: 6px;
+}
+
+.fa-chevron-circle-left {
+  color: #ac0542;
+  cursor: pointer;
+}
+.fa-chevron-circle-left:hover {
+  color: #c90c52;
+  transform: scale(1.1);
+}
+
+.fa-chevron-circle-right {
+  color: #427405;
+  cursor: pointer;
+}
+.fa-chevron-circle-right:hover {
+  color: #67a11f;
+  transform: scale(1.1);
+}
+
+/* Flowerbed definitions - will move during class 20 demo */
+.flowerbed {
+  flex-direction: column;
+  padding: 16px;
+  gap: 20px;
+  border-color: #508015;
+  border-style: solid;
+  border-width: 2px 2px 2px 12px;
+}
+
+.plant-grid {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Selected plant definitions - will move during class 20 demo */
+.selected-plant {
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 162px;
+}
+
+.big-num {
+  color: #508015;
+  font-size: 40px;
+  font-weight: 700;
+}

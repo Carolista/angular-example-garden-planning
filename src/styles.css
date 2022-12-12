@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+.selected-plant {
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 162px;
+}
+
+.big-num {
+  color: #508015;
+  font-size: 40px;
+  font-weight: 700;
+}
