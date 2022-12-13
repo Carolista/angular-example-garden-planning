@@ -16,9 +16,17 @@ export class Plant {
     this.image = image;
   }
 
-  // TODO #3: add returnOne() method to shift numbers
-
+  returnOne(): void {
+    if (this.numAllocated > 0) {
+      this.numAllocated--;
+      this.numAvailable++;
+    }
+  }
   
-  // TODO #3: add allocateOne() method to shift numbers
-  
+  allocateOne(): void {
+    if (this.numAvailable > 0) {
+      this.numAllocated++;
+      this.numAvailable--;
+    }
+  }
 }
