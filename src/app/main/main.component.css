@@ -49,7 +49,7 @@
   transform: scale(1.1);
 }
 
-/* Flowerbed definitions - will move during class 20 demo */
+/* TODO #3: Move flowerbed definitions to new flowerbed component */
 .flowerbed {
   flex-direction: column;
   padding: 16px;
@@ -65,7 +65,7 @@
   gap: 10px;
 }
 
-/* Selected plant definitions - will move during class 20 demo */
+/* TODO #4: move selected plant definitions to new selected-plant component*/
 .selected-plant {
   flex-direction: column;
   align-items: center;

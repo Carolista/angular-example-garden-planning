@@ -12,6 +12,7 @@
           />
           <p>
             {{ plant.name }}, {{ capitalize(plant.color) }}<br />
+            <!-- TODO #2: add a conditional unavailable class if plant.numAvailable is 0 -->
             <span
               class="amount-text"
               >{{ plant.numAvailable }} available</span
@@ -34,6 +35,8 @@
     </ng-container>
   </div>
   <div id="right-column">
+    <!-- TODO #3: Move the entire flowerbed card into a new flowerbed component -->
+    <!-- Make sure to pass the selectedPlants into the component -->
     <div class="card flowerbed">
       <div>
         <h4
@@ -45,6 +48,7 @@
           {{ name }}
         </h4>
         <ng-template #flowerbedName>
+          <!-- TODO #1: Use property binding to add the name variable to the field -->
           <input
             #nameInput
             type="text"
@@ -54,6 +58,9 @@
         </ng-template>
       </div>
       <div class="plant-grid" *ngIf="selectedPlants.length; else empty">
+        <!-- TODO #4: Move the selected plant card into a selected-plant component -->
+        <!-- Use an <ng-container> for the looping of <app-selected-plant> -->
+        <!-- Be sure to pass each plant into the new component -->
         <div class="card selected-plant" *ngFor="let selectedPlant of selectedPlants">
           <img
             src="../../../../assets/images/{{ selectedPlant.image }}"
@@ -70,5 +77,5 @@
 </div>
 
 <ng-template #loading>
-  <p>Data is loading...</p>
+  <p>Data loading...</p>
 </ng-template>

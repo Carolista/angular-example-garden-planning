@@ -14,9 +14,9 @@ export class MainComponent implements OnInit {
   plants: Plant[] = [];
   selectedPlants: Plant[] = [];
 
-  capitalize = capitalize; // make available to template
+  capitalize = capitalize; // make import available to template
 
-  // NOTE: These two will eventually move to a separate component
+  // TODO #3: Move name and editingName to flowerbed component
   name: string = 'My Flowerbed';
   editingName: boolean = false;
 
@@ -29,7 +29,7 @@ export class MainComponent implements OnInit {
   async loadPlants() {
     let response = await fetch('https://docs.google.com/document/d/1DjGYPISRGCsP4zHwJYBtciqbKAvae1CZ9EKsci4mTJk/export?format=txt');
     let data = await response.json();
-    console.log(data);
+    // console.log(data);
     for (let i=0; i < data.length; i++) {
       this.plants.push(
         new Plant(
@@ -46,7 +46,7 @@ export class MainComponent implements OnInit {
     this.loaded = true;
   }
 
-  returnPlant(plant: Plant): void {
+  returnPlant(plant: Plant) {
     plant.returnOne();
     if (this.selectedPlants.includes(plant) && plant.numAllocated === 0) {
       let index = this.selectedPlants.indexOf(plant);
@@ -54,13 +54,15 @@ export class MainComponent implements OnInit {
     }
   }
 
-  allocatePlant(plant: Plant): void {
+  allocatePlant(plant: Plant) {
     plant.allocateOne();
     if (!this.selectedPlants.includes(plant)) {
       this.selectedPlants.push(plant);
     }
   }
 
+  // TODO #3: move openNameInput() and saveName() to flowerbed component
+  
   openNameInput(): void {
     this.editingName = true;
   }
@@ -73,5 +75,4 @@ export class MainComponent implements OnInit {
       alert('\nPlease enter a name for your flowerbed.\n');
     }
   }
-
 }
