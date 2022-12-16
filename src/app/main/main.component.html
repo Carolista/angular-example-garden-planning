@@ -35,44 +35,7 @@
     </ng-container>
   </div>
   <div id="right-column">
-    <!-- TODO #3: Move the entire flowerbed card into a new flowerbed component -->
-    <!-- Make sure to pass the selectedPlants into the component -->
-    <div class="card flowerbed">
-      <div>
-        <h4
-          class="clickable"
-          title="Click to edit"
-          *ngIf="!editingName; else flowerbedName"
-          (click)="openNameInput()"
-        >
-          {{ name }}
-        </h4>
-        <ng-template #flowerbedName>
-          <input
-            #nameInput
-            type="text"
-            [value]="name"
-            (keyup.enter)="saveName(nameInput.value)"
-          />
-          <button (click)="saveName(nameInput.value)">Save</button>
-        </ng-template>
-      </div>
-      <div class="plant-grid" *ngIf="selectedPlants.length; else empty">
-        <!-- TODO #4: Move the selected plant card into a selected-plant component -->
-        <!-- Use an <ng-container> for the looping of <app-selected-plant> -->
-        <!-- Be sure to pass each plant into the new component -->
-        <div class="card selected-plant" *ngFor="let selectedPlant of selectedPlants">
-          <img
-            src="../../../../assets/images/{{ selectedPlant.image }}"
-            width="150px"
-            height="150px"
-            alt="{{ selectedPlant.color }} {{ selectedPlant.name }}"
-          />
-          <span class="big-num">{{ selectedPlant.numAllocated }}</span>
-        </div>
-      </div>
-      <ng-template #empty> Select a plant to get started! </ng-template>
-    </div>
+    <app-flowerbed [selectedPlants]="selectedPlants"></app-flowerbed>
   </div>
 </div>
 

@@ -16,10 +16,6 @@ export class MainComponent implements OnInit {
 
   capitalize = capitalize; // make import available to template
 
-  // TODO #3: Move name and editingName to flowerbed component
-  name: string = 'My Flowerbed';
-  editingName: boolean = false;
-
   constructor() { }
 
   ngOnInit(): void {
@@ -58,21 +54,6 @@ export class MainComponent implements OnInit {
     plant.allocateOne();
     if (!this.selectedPlants.includes(plant)) {
       this.selectedPlants.push(plant);
-    }
-  }
-
-  // TODO #3: move openNameInput() and saveName() to flowerbed component
-  
-  openNameInput(): void {
-    this.editingName = true;
-  }
-
-  saveName(nameInputValue: string): void {
-    if (nameInputValue.trim().length) {
-      this.name = nameInputValue;
-      this.editingName = false;
-    } else {
-      alert('\nPlease enter a name for your flowerbed.\n');
     }
   }
 }
