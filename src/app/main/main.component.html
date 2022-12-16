@@ -12,9 +12,9 @@
           />
           <p>
             {{ plant.name }}, {{ capitalize(plant.color) }}<br />
-            <!-- TODO #2: add a conditional unavailable class if plant.numAvailable is 0 -->
             <span
               class="amount-text"
+              [class.unavailable]="plant.numAvailable === 0"
               >{{ plant.numAvailable }} available</span
             >
           </p>
