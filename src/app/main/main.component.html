@@ -48,10 +48,10 @@
           {{ name }}
         </h4>
         <ng-template #flowerbedName>
-          <!-- TODO #1: Use property binding to add the name variable to the field -->
           <input
             #nameInput
             type="text"
+            [value]="name"
             (keyup.enter)="saveName(nameInput.value)"
           />
           <button (click)="saveName(nameInput.value)">Save</button>
