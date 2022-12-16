@@ -19,18 +19,9 @@
     </ng-template>
   </div>
   <div class="plant-grid" *ngIf="selectedPlants.length; else empty">
-    <!-- TODO #4: Move the selected plant card into a selected-plant component -->
-    <!-- Use an <ng-container> for the looping of <app-selected-plant> -->
-    <!-- Be sure to pass each plant into the new component -->
-    <div class="card selected-plant" *ngFor="let selectedPlant of selectedPlants">
-      <img
-        src="../../../../assets/images/{{ selectedPlant.image }}"
-        width="150px"
-        height="150px"
-        alt="{{ selectedPlant.color }} {{ selectedPlant.name }}"
-      />
-      <span class="big-num">{{ selectedPlant.numAllocated }}</span>
-    </div>
+    <ng-container *ngFor="let selectedPlant of selectedPlants">
+      <app-selected-plant [selectedPlant]="selectedPlant"></app-selected-plant>
+    </ng-container>
   </div>
   <ng-template #empty> Select a plant to get started! </ng-template>
 </div>
